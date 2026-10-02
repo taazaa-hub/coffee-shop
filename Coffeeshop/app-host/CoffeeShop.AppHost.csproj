@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Sdk Name="Aspire.AppHost.Sdk" Version="$(AspireVersion)" />
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<IsAspireHost>true</IsAspireHost>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Aspire.Hosting.AppHost" />
+		<PackageReference Include="Aspire.Hosting.PostgreSQL" />
+		<PackageReference Include="Aspire.Hosting.Redis" />
+		<PackageReference Include="Aspire.Hosting.RabbitMQ" />
+		<PackageReference Include="CommunityToolkit.Aspire.Hosting.Ollama" />
+		<PackageReference Include="Yarp.ReverseProxy" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AspNetCore.HealthChecks.NpgSql" />
+		<PackageReference Include="AspNetCore.HealthChecks.Rabbitmq" />
+		<PackageReference Include="AspNetCore.HealthChecks.Redis" />
+		<PackageReference Include="AspNetCore.HealthChecks.Uris" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\order-summary\CoffeeShop.OrderSummary.csproj" />
+		<ProjectReference Include="..\product-api\CoffeeShop.ProductApi.csproj" />
+		<ProjectReference Include="..\counter-api\CoffeeShop.CounterApi.csproj" />
+		<ProjectReference Include="..\barista-api\CoffeeShop.BaristaApi.csproj" />
+		<ProjectReference Include="..\kitchen-api\CoffeeShop.KitchenApi.csproj" />
+		<ProjectReference Include="..\yarp\CoffeeShop.Yarp\CoffeeShop.Yarp.csproj" />
+	</ItemGroup>
+
+</Project>
